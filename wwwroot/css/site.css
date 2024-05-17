@@ -1,0 +1,180 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #7e22ce;
+    }
+    25% {
+        color: #800080;
+    }
+    50% {
+        color: #3c377c;
+    }
+    75% {
+        color: #081245;
+    }
+    100% {
+        color: #9797be;
+    }
+}
+
+#titleProjet {
+    animation-name: colorChange; 
+    animation-duration: 6s; 
+    animation-iteration-count: infinite;
+}
+.box {
+    width: 140px;
+    height: auto;
+    float: left;
+    transition: .5s linear;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    margin: 0 5px;
+    background: #c0ff00;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+    .box:before {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 100%;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid transparent;
+        box-sizing: border-box;
+        transform: translateX(100%);
+    }
+
+    .box:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        border-top: 4px solid transparent;
+        border-right: 4px solid transparent;
+        box-sizing: border-box;
+        transform: translateX(-100%);
+    }
+
+    .box:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+        .box:hover:before {
+            border-color: #262626;
+            height: 100%;
+            transform: translateX(0);
+            transition: .3s transform linear, .3s height linear .3s;
+        }
+
+        .box:hover:after {
+            border-color: #262626;
+            height: 100%;
+            transform: translateX(0);
+            transition: .3s transform linear, .3s height linear .5s;
+        }
+
+button {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .sign svg {
+        width: 17px;
+    }
+
+        .sign svg path {
+            fill: white;
+        }
+/* text */
+.text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+    .Btn:hover .sign {
+        width: 30%;
+        transition-duration: .3s;
+        padding-left: 20px;
+    }
+    /* hover effect button's text */
+    .Btn:hover .text {
+        opacity: 1;
+        width: 70%;
+        transition-duration: .3s;
+        padding-right: 10px;
+    }
+/* button click effect*/
+.Btn:active {
+    transform: translate(2px,2px);
+}

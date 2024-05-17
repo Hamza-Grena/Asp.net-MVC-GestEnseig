@@ -1,0 +1,48 @@
+﻿@model GestionEnseignants.Models.Enseignant
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1></h1>
+
+<div>
+    <h4><b>Enseignant</b></h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            <b>Nom enseignant</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>Prenom enseignant</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>Date Nais Enseignant</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dateNais)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>Grade Enseignant</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.grd)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>ID Departement</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.departementId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Retour liste enseignant</a>
+</div>

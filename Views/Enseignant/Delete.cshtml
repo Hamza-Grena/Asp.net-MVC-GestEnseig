@@ -1,0 +1,51 @@
+﻿@model GestionEnseignants.Models.Enseignant
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1><b>Supprimer</b></h1>
+
+<h3>Est ce que vous etes sur de supprimer ce Enseignant?</h3>
+<div>
+    <h4><b>Enseignant</b></h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+           <b>Nom Enseignant</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>Prenom Enseignant</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>Date Nais Enseignant</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dateNais)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>Grade Enseignant</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.grd)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>ID departement Enseignant</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.departementId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">retour liste enseignant</a>
+    </form>
+</div>

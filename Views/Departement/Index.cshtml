@@ -1,0 +1,50 @@
+﻿@model IEnumerable<GestionEnseignants.Models.Departement>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1><b>Liste de departement :</b></h1>
+
+<p>
+    
+    <a asp-action="Create" style="text-decoration: none;"><button type="button" class="btn btn-primary"><img src="~/images/ajouter.png" height="35px" width="50px" alt=" iconAdd" />  Ajouter nouveau Departement</button></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <b>Img Dept</b>
+            </th>
+            <th>
+                <b>Nom dep</b>
+            </th>
+            <th>
+                <b>Responsable dep</b>
+            </th>
+            <th><center><b>Actions</b></center></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    <img src="~/images/deprtementIcon.png" height="35px" width="50px" alt="IconDep" />
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.depName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.responsable)
+            </td>
+            <td>
+                <center>
+                    <a asp-action="Edit" asp-route-id="@item.Id" style="text-decoration: none;"><button type="button" class="btn btn-warning"><img src="~/images/editIcon.png" height="20px" width="50px" alt=" editIcon" />Edit</button></a>
+                    <a asp-action="Details" asp-route-id="@item.Id" style="text-decoration: none;"><button type="button" class="btn btn-info"><img src="~/images/infoIcon.png" height="20px" width="35px" alt=" infoIcon" />Details</button></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" style="text-decoration: none;"><button type="button" class="btn btn-danger"><img src="/images/deleteIcon.png" height="20px" width="35px" alt=" deleteIcon" />Delete</button></a>
+                </center>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
